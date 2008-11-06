@@ -1,5 +1,8 @@
 Revision history for Padre-Plugin-TabAndSpace
 
+0.06	2008.11.6
+		change use to require Padre::Wx::History::TextDialog;
+
 0.05	2008.11.5
 		remove "Delete Leading Space"
 

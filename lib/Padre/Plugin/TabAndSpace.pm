@@ -3,10 +3,9 @@ package Padre::Plugin::TabAndSpace;
 use warnings;
 use strict;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Wx ':everything';
-use Padre::Wx::History::TextDialog;
 
 my @menu = (
     ['Tab to Space', \&tab_to_space ],
@@ -38,6 +37,7 @@ sub _convert_tab_with_space {
         $title = 'Tab to Space';
     }
     
+    require Padre::Wx::History::TextDialog;
     my $dialog = Padre::Wx::History::TextDialog->new(
         $self, 'How many spaces for each tab:', $title, $type,
     );
@@ -107,6 +107,7 @@ sub delete_leading_space {
         $self->message('No selection');
     }
     
+    require Padre::Wx::History::TextDialog;
     my $dialog = Padre::Wx::History::TextDialog->new(
         $self, 'How many leading spaces to delete(1 tab == 4 spaces):',
         'Delete Leading Space', 'fay_delete_leading_space',
